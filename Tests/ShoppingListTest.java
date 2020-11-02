@@ -72,29 +72,31 @@ class ShoppingListTest {
 
   @Test
   void getTotalNetPrice__pass_nothing__returns_correct_total() {
-    // TODO 14 - Write this test method: Rushi
-    double expected = 6.96;
-    assertEquals( expected, testShoppingList.getTotalNetPrice() );
+    // TODO 14 + Write this test method: Rushi
+   //double expected = 6.96;
+    assertEquals( (product1.getPrice() * product1.getQuantity()) + (product2.getPrice() * product2.getQuantity()),
+            testShoppingList.getTotalNetPrice() );
+
 
   }
 
   @Test
   void getProductCount__pass_nothing__returns_correct_count() {
-    // TODO 15 - Write appropriate assertion: Rushi
-    int expected = 2;
-    assertEquals(expected,testShoppingList.getProductCount());
+    // TODO 15 + Write appropriate assertion: Rushi
+    //int expected = 2;
+    assertEquals(testShoppingList.getProducts().size(),testShoppingList.getProductCount());
 
   }
 
   @Test
   void moveToCart__pass_product__product_is_marked_in_cart() {
-    // TODO 16 - Assert that product1 is *not* in the cart: Rushi
+    // TODO 16 + Assert that product1 is *not* in the cart: Rushi
     testShoppingList.removeProduct( product1 );
     assertFalse(testShoppingList.containsProduct( product1 ));
-    // TODO 17 - Move product1 into the cart: Rushi
+    // TODO 17 + Move product1 into the cart: Rushi
     testShoppingList.moveToCart( product1 );
 
-    // TODO 18 - Assert that product1 IS in the cart: Rushi
+    // TODO 18 + Assert that product1 IS in the cart: Rushi
     assertFalse(testShoppingList.containsProduct( product1 ));
     
 
